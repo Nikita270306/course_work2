@@ -24,7 +24,7 @@ Follow these steps to run the project:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/your-project.git
+   git clone [https://github.com/your-username/your-project.git](https://github.com/Nikita270306/course_work2)
    
 ## Project Components
  - DBManager.py: Contains the DBManager class for efficient data management within the PostgreSQL database.

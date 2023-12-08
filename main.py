@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 
+from api.hh_api import HeadHunterApi
 from database.manager import DBManager
 
 load_dotenv()
@@ -18,6 +19,7 @@ def main():
     dbmanager = DBManager(dbname=dbname, user=user, password=password, host=host, port=port)
 
     dbmanager.create_tables()
+    dbmanager.filling_to_database(HeadHunterApi.get_vacancies())
 
     print('Это все компании и колличесво вакансий в этих компаниях: ', dbmanager.get_companies_and_vacancies_count())
     print('Это просто все компании и информация о вакансиях в них: ', dbmanager.get_all_vacancies())

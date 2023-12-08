@@ -13,7 +13,7 @@ class DBManager:
     def create_tables(self):
         self.cur.execute('''
             CREATE TABLE IF NOT EXISTS companies (
-                id SERIAL PRIMARY KEY,
+                company_id SERIAL PRIMARY KEY,
                 name VARCHAR(255) UNIQUE
             )
         ''')
@@ -21,7 +21,7 @@ class DBManager:
         self.cur.execute('''
             CREATE TABLE IF NOT EXISTS vacancies (
                 vacancy_id SERIAL PRIMARY KEY,
-                company_id INTEGER REFERENCES companies(id),
+                company_id INTEGER REFERENCES companies(company_id),
                 title VARCHAR(255),
                 min_salary INTEGER,
                 max_salary INTEGER,
@@ -119,5 +119,6 @@ class DBManager:
         self.conn.close()
 
 
-
-
+# dbm = DBManager(dbname='course_work_db', user='postgres', password='123456', host='localhost', port=5432)
+#
+# print(dbm.get_companies_and_vacancies_count())

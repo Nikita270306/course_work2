@@ -118,7 +118,3 @@ class DBManager:
         self.cur.close()
         self.conn.close()
 
-
-# dbm = DBManager(dbname='course_work_db', user='postgres', password='123456', host='localhost', port=5432)
-#
-# print(dbm.get_companies_and_vacancies_count())
